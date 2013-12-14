@@ -109,9 +109,13 @@ HUD.prototype.updateContent = function(content) {
     var img = item.children[0]
     var label = item.children[1]
 
-    if (img.src !== content[i].icon) img.src = content[i].icon
-    if (label.textContent !== content[i].label) label.textContent = content[i].label
-    if (label.attributes["data-id"].value !== content[i].id) label.attributes["data-id"].value = content[i].id
+    var newIcon = content[i].icon || 'data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA='
+    var newLabel = content[i].label || ''
+    var newId = content[i].id || 0
+
+    if (img.src !== newIcon) img.src = newIcon
+    if (label.textContent !== newLabel) label.textContent = newLabel
+    if (label.attributes["data-id"].value !== newId) label.attributes["data-id"].value = newId
   }
 }
 
