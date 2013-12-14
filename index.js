@@ -2,8 +2,7 @@ var keymaster = require('./lib/keymaster.js')
 var inherits = require('inherits')
 var events = require('events')
 var elementClass = require('element-class')
-
-var keyTable = require('./lib/keytable.js')
+var vkey = require('vkey')
 
 module.exports = function(opts) {
   return new HUD(opts)
@@ -28,7 +27,7 @@ inherits(HUD, events.EventEmitter)
 HUD.prototype.onKeyDown = function() {
   var self = this
   keymaster.getPressedKeyCodes().map(function(keyCode) {
-    var pressed = keyTable[keyCode]
+    var pressed = vkey[keyCode]
     var idx = self.toolbarKeys.indexOf(pressed)
     if (idx > -1) return self.switchToolbar(idx)
   })
