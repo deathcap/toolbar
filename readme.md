@@ -64,6 +64,7 @@ npm start
 ## programmatically modify toolbar contents
 
 * setContent - clear and set the toolbar items
+* updateContent - change existing toolbar items
 * addContent - append a toolbar item to the end (right-most side)
 * emptyContent - remove all items from the toolbar
 

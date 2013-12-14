@@ -97,6 +97,24 @@ HUD.prototype.setContent = function(content) {
   }) 
 }
 
+HUD.prototype.updateContent = function(content) {
+  var self = this
+
+  var inner = this.el.getElementsByClassName('tab-inner')[0]
+  var items = inner.children;
+
+  for (var i = 0; i < items.length; ++i) {
+    var item = items[i]
+
+    var img = item.children[0]
+    var label = item.children[1]
+
+    if (img.src !== content[i].icon) img.src = content[i].icon
+    if (label.textContent !== content[i].label) label.textContent = content[i].label
+    if (label.attributes["data-id"].value !== content[i].id) label.attributes["data-id"].value = content[i].id
+  }
+}
+
 HUD.prototype.addContent = function(item) {
   var self = this
   // create new tab
