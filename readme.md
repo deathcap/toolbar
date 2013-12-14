@@ -60,6 +60,31 @@ npm install -g beefy
 Then simply start the demo
 ```bash
 npm start
+
+## programmatically modify toolbar contents
+
+* setContent - clear and set the toolbar items
+* addContent - append a toolbar item to the end (right-most side)
+* emptyContent - remove all items from the toolbar
+
+```javascript
+bartab.setContent([{
+  icon:'icons/poptart.png',
+  label:'has icon',
+  id:'poptart',
+},{
+  icon:'icons/toast.png',
+  label:'no icon',
+  id:'toast',
+}])
+
+bartab.emptyContent()
+
+bartab.addContent({
+  icon:'icons/toast.png',
+  label:'yummy toast',
+  id:'toast',
+})
 ```
 
 ## bonus advice
