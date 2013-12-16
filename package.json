@@ -8,7 +8,7 @@
     "start": "cd demo; beefy demo.js:bundle.js --open;"
   },
   "dependencies": {
-    "vkey": "0.0.2",
+    "vkey": "0.0.3",
     "inherits": "1.0.0",
     "element-class": "0.0.2"
   }
